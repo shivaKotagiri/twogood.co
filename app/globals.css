@@ -1,9 +1,27 @@
+@import url('https://fonts.cdnfonts.com/css/futura-now-headline');
 @import "tailwindcss";
+
+@layer utilities {
+  @keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+  }
+
+  .animate-spin-super-slow {
+    animation: spin-slow 7s linear infinite;
+  }
+}
+
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
+
 
 @theme inline {
   --color-background: var(--background);
@@ -12,15 +30,25 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Futura Now Headline", "Lucida Sans", Tahoma, sans-serif;
+}
+
+::selection {
+  background: black;
+  color: white;
 }
