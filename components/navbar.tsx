@@ -51,8 +51,10 @@ export default function Navbar() {
     if(timeline.current) {
       if(menuIsOpen) {
         timeline.current.play();
+        document.body.style.overflow = "hidden";
       } else {
         timeline.current.reverse();
+        document.body.style.overflow = "unset";
       }
     }
   }, [menuIsOpen])
