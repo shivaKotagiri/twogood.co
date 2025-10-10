@@ -10,8 +10,11 @@ export default function Navbar() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const container = useRef<HTMLDivElement | null>(null);
   const timeline = useRef<gsap.core.Timeline | null>(null);
+  const navLinksRef = useRef<HTMLDivElement | null>(null);
+  const lastScrollY = useRef(0);
 
   useGSAP(() => {
+    if(!container.current) return;
     gsap.set("#menu-overlay", {
       clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
     });
@@ -61,17 +64,33 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if(window.scrollY > 100 && menuIsOpen) {
-        setHide(true)
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > lastScrollY.current && currentScroll > 100) {
+        gsap.to(navLinksRef.current, {
+          y: -50,
+          opacity: 0,
+          duration: 0.25,
+          ease: "power2.out",
+          pointerEvents: "none",
+        });
       } else {
-        setHide(false);
+        gsap.to(navLinksRef.current, {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          pointerEvents: "auto",
+        });
       }
-    }
 
-    window.addEventListener("scroll", handleScroll)
+      lastScrollY.current = currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  }, [])
   return (
     <nav ref={container} style={{ fontFamily: "Helvetica Now Text, Lucida Sans, Tahoma, sans-serif" }} className="fixed w-screen h-screen overflow-hidden">
       <div className={`${menuIsOpen ? 'text-white' : 'text-black'} fixed bg-transparent w-screen top-0 left-0 right-0 flex items-center justify-between pt-5 z-50 pointer-events-none transition-colors duration-300`}>
@@ -81,7 +100,7 @@ export default function Navbar() {
           <span>co.</span>
         </h2>
         <div id="nav-options" className="flex justify-start items-start uppercase text-[12px] ml-auto gap-17 pointer-events-auto">
-          <div id="nav-1" className={`hidden md:flex transition-opacity duration-100 ${hide ? "opacity-0 pointer-events-none": "opacity-100"} gap-17 px-4 py-2 transform -translate-x-[185px]`}>
+          <div id="nav-1" ref={navLinksRef} className={`hidden md:flex transition-opacity duration-100 ${hide ? "opacity-0 pointer-events-none": "opacity-100"} gap-17 px-4 py-2 transform -translate-x-[185px]`}>
             <p className="cursor-pointer">Shop</p>
             <p className="cursor-pointer">Wholesale</p>
             <p className="cursor-pointer">Catering</p>
@@ -93,7 +112,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div id="menu-overlay" className="w-screen h-screen flex flex-col justify-between bg-black text-white">
+      <div id="menu-overlay" className={`${menuIsOpen ? "text-white bg-black": ""} w-screen h-screen fixed top-0 left-0 bg-black z-40`} style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}>
         <div>
           <div style={{ fontFamily: "Futura Now Headline"}} className="font-[850] text-[2.5rem] leading-10 text-end flex flex-col mt-50 uppercase lg:text-[5rem] lg:font-[850] px-5 lg:leading-20">
             <div className="overflow-hidden"><p className="categories">shop</p></div>
