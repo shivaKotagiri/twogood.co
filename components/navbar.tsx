@@ -106,7 +106,7 @@ export default function Navbar() {
             <p className="cursor-pointer">Catering</p>
             <p className="cursor-pointer">Donate</p>
           </div>
-          <div id="nav-icons" className={` fixed top-4 right-2 flex gap-17 px-5 py-3 rounded-full z-50 cursor-pointer pointer-events-auto`}>
+          <div id="nav-icons" className={`fixed text-black top-4 right-2 flex gap-17 px-5 py-3 rounded-full z-50 cursor-pointer pointer-events-auto bg-white`}>
             <div onClick={handleClick}>{menuIsOpen ? <X size={23} strokeWidth={1} /> : <Menu size={16} strokeWidth={1} />}</div>
             <ShoppingCart size={18} strokeWidth={1} />
           </div>
@@ -114,7 +114,7 @@ export default function Navbar() {
       </div>
       <div id="menu-overlay" className={`${menuIsOpen ? "text-white bg-black": ""} w-screen h-screen fixed top-0 left-0 bg-black z-40`} style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}>
         <div>
-          <div style={{ fontFamily: "Futura Now Headline"}} className="font-[850] text-[2.5rem] leading-10 text-end flex flex-col mt-50 uppercase lg:text-[5rem] lg:font-[850] px-5 lg:leading-20">
+          <div style={{ fontFamily: "Futura Now Headline "}} className="font-[850] text-[2.5rem] leading-10 text-end flex flex-col mt-50 uppercase lg:text-[5rem] lg:font-[850] px-5 lg:leading-20">
             <div className="overflow-hidden"><p className="categories">shop</p></div>
             <div className="overflow-hidden"><p className="categories">wholesale</p></div>
             <div className="overflow-hidden"><p className="categories">catering</p></div>

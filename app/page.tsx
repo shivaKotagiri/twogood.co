@@ -1,3 +1,4 @@
+import Feedback from "@/components/feedback";
 import Hero from "@/components/hero";
 import Images from "@/components/images";
 import Products from "@/components/products";
@@ -17,6 +18,7 @@ export default function Home() {
       <Support />
       <Products />
       <Seperator left="Words of Goodness" right="Messages of Love & Support" />
+      <Feedback />
     </div>
   );
 }

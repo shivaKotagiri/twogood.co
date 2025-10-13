@@ -15,7 +15,7 @@ export default function SweetImage() {
       />
 
       <div className="w-[183px] h-[183px]">
-        <div className="relative w-full h-full">
+        <div className="w-full h-full">
           <Image 
             className="animate-spin-super-slow cursor-pointer" 
             src="/svg.svg" 
