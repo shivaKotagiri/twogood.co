@@ -92,7 +92,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav ref={container} style={{ fontFamily: "Helvetica Now Text, Lucida Sans, Tahoma, sans-serif" }} className="fixed w-screen h-screen overflow-hidden">
+    <nav ref={container} style={{ fontFamily: "Helvetica Now Text, Lucida Sans, Tahoma, sans-serif" }} className="fixed w-screen h-screen overflow-hidden z-50">
       <div className={`${menuIsOpen ? 'text-white' : 'text-black'} fixed bg-transparent w-screen top-0 left-0 right-0 flex items-center justify-between pt-5 z-50 pointer-events-none transition-colors duration-300`}>
           <h2 id="logo" className="fixed top-5 left-5 uppercase font-black text-[31px] leading-[90%] flex flex-col z-50 p-1 cursor-pointer pointer-events-auto">
           <span>two</span>
