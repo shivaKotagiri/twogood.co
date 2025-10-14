@@ -45,7 +45,7 @@ export default function Contact() {
             </div>
         </div>
         <div className="flex flex-col justify-center items-center w-[70%]">
-            <Image src={"/logo.webp"} height={216} width={215} alt="Logo" className="flex-shrink-auto h-auto w-[150px] lg:w-[200px]" />
+            <Image src={"/logo.webp"} height={216} width={215} alt="Logo" className="flex-shrink-auto h-auto w-[150px] lg:w-[216px]" />
             <div className="py-20 uppercase flex gap-5 text-neutral-500 text-sm justify-center items-center">
                 <div className="cursor-pointer">© Two Good Co. 2025</div>
                 <div className="cursor-pointer">Terms of Use</div>

@@ -13,6 +13,7 @@ export default function Navbar() {
   const timeline = useRef<gsap.core.Timeline | null>(null);
   const navLinksRef = useRef<HTMLDivElement | null>(null);
   const lastScrollY = useRef(0);
+  
 
   useGSAP(() => {
     if(!container.current) return;
@@ -96,10 +97,10 @@ export default function Navbar() {
     <nav ref={container} style={{ fontFamily: "Helvetica Now Text, Lucida Sans, Tahoma, sans-serif" }} className="fixed w-screen h-screen overflow-hidden pointer-events-none z-50">
       <div className={`${menuIsOpen ? 'text-white' : 'text-black'} fixed bg-transparent w-screen top-0 left-0 right-0 flex items-center justify-between pt-5 z-50 pointer-events-none transition-colors duration-300`}>
           <h2 id="logo" className="fixed top-5 left-5 uppercase font-black text-[31px] leading-[90%] flex flex-col z-50 p-1 cursor-pointer pointer-events-auto">
-          <span>two</span>
-          <span>good</span>
-          <span>co.</span>
-        </h2>
+            <span>two</span>
+            <span>good</span>
+            <span>co.</span>
+          </h2>
         <div id="nav-options" className="flex justify-start items-start uppercase text-[12px] ml-auto gap-17 pointer-events-auto">
           <div id="nav-1" ref={navLinksRef} className={`hidden md:flex transition-opacity duration-100 ${hide ? "opacity-0 pointer-events-none": "opacity-100"} gap-17 px-4 py-2 transform -translate-x-[185px]`}>
             <p className="cursor-pointer">Shop</p>
