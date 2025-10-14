@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { Menu, ShoppingCart, X } from "lucide-react";
@@ -78,7 +79,7 @@ export default function Navbar() {
         gsap.to(navLinksRef.current, {
           y: 0,
           opacity: 1,
-          duration: 1,
+          duration: 2,
           ease: "power2.out",
           pointerEvents: "auto",
         });
@@ -92,7 +93,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav ref={container} style={{ fontFamily: "Helvetica Now Text, Lucida Sans, Tahoma, sans-serif" }} className="fixed w-screen h-screen overflow-hidden z-50">
+    <nav ref={container} style={{ fontFamily: "Helvetica Now Text, Lucida Sans, Tahoma, sans-serif" }} className="fixed w-screen h-screen overflow-hidden pointer-events-none z-50">
       <div className={`${menuIsOpen ? 'text-white' : 'text-black'} fixed bg-transparent w-screen top-0 left-0 right-0 flex items-center justify-between pt-5 z-50 pointer-events-none transition-colors duration-300`}>
           <h2 id="logo" className="fixed top-5 left-5 uppercase font-black text-[31px] leading-[90%] flex flex-col z-50 p-1 cursor-pointer pointer-events-auto">
           <span>two</span>
@@ -112,7 +113,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div id="menu-overlay" className={`${menuIsOpen ? "text-white bg-black": ""} w-screen h-screen fixed top-0 left-0 bg-black z-40`} style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}>
+      <div id="menu-overlay" className={`${menuIsOpen ? "text-white bg-black": ""} w-screen flex flex-col justify-between h-screen fixed top-0 left-0 bg-black z-40`} style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}>
         <div>
           <div style={{ fontFamily: "Futura Now Headline "}} className="font-[850] text-[2.5rem] leading-10 text-end flex flex-col mt-50 uppercase lg:text-[5rem] lg:font-[850] px-5 lg:leading-20">
             <div className="overflow-hidden"><p className="categories">shop</p></div>
@@ -125,7 +126,7 @@ export default function Navbar() {
             <div className="overflow-hidden"><p className="categories">donate</p></div>
           </div>
         </div>
-        <div className="md:w-[60%] flex justify-between text-[12px] px-5 lg:-translate-y-10">
+        <div className="md:w-[60%] w-full flex justify-between text-[12px] px-5 lg:-translate-y-10">
           <div className="footer-section">
             <div className="text-neutral-500 uppercase">connect with us</div>
             <div className="flex flex-col mt-8 text-[15px]">

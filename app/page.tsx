@@ -1,4 +1,5 @@
 "use client"
+import Contact from "@/components/contact";
 import Feedback from "@/components/feedback";
 import Hero from "@/components/hero";
 import Images from "@/components/images";
@@ -37,7 +38,7 @@ export default function Home() {
 
   }, [])
   return (
-    <div className="px-3 lg:px-5 scroll-smooth">
+    <div className="px-3 lg:px-5 scroll-smooth overflow-x-hidden">
       <Hero />
       <SweetImage />
       <SweetMemo />
@@ -48,6 +49,7 @@ export default function Home() {
       <Seperator left="Words of Goodness" right="Messages of Love & Support" />
       <Feedback />
       <Impact />
+      <Contact />
     </div>
   );
 }

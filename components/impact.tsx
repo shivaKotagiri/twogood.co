@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Impact() {
     return (
-        <div className="w-full h-auto flex flex-col lg:flex-row gap-8 lg:gap-5 justify-between overflow-x-hidden">
-            <div style={{ fontFamily: "Helvetica Now Text, Lucida Sans, Tahoma, sans-serif"}} className="lg:w-[25%] w-full flex flex-col gap-5 flex-shrink-0">
+        <div className="w-full h-auto flex flex-col-reverse lg:flex-row gap-8 lg:gap-5 justify-between overflow-x-hidden">
+            <div style={{ fontFamily: "Helvetica Now Text, Lucida Sans, Tahoma, sans-serif"}} className="lg:w-[25%] w-[65%] flex flex-col gap-5 flex-shrink-0">
                 <div style={{ fontFamily: "Futura Now Headline, Lucida Sans, Tahoma, sans-serif"}} className="text-2xl font-extrabold uppercase">
                     Our Impact.
                 </div>
