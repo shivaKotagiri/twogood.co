@@ -58,7 +58,7 @@ export default function Navbar() {
         timeline.current.play();
         document.body.style.overflow = "hidden";
       } else {
-        timeline.current.reverse();
+        timeline.current.reverse()
         document.body.style.overflow = "unset";
       }
     }
@@ -76,11 +76,11 @@ export default function Navbar() {
           ease: "power2.out",
           pointerEvents: "none",
         });
-      } else {
+      } else if(lastScrollY.current > 0 && lastScrollY.current < 100) {
         gsap.to(navLinksRef.current, {
           y: 0,
           opacity: 1,
-          duration: 2,
+          duration: 0.25,
           ease: "power2.out",
           pointerEvents: "auto",
         });

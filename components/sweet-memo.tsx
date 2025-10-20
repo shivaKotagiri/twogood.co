@@ -17,7 +17,6 @@ export default function SweetMemo() {
             scrollTrigger: {
                 trigger: container.current,
                 scroller: "body",
-                markers: true,
                 start: "top bottom",
                 toggleActions: "play none none none",
                 once: true

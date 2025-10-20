@@ -2,7 +2,7 @@
 
 export default function Support() {
     return (
-        <div style={{ fontFamily: "Helvetica Now Text, Lucida Sans, Tahoma, sans-serif"}} className="w-screen lg:flex lg:text-start text-center justify-between mt-17 mb-70">
+        <div style={{ fontFamily: "Helvetica Now Text, Lucida Sans, Tahoma, sans-serif"}} className="w-screen lg:flex lg:text-start text-center justify-between mt-17 lg:mb-20">
             <div className="lg:w-[50%] leading-none uppercase text-[2rem] lg:text-[3.5rem] font-extrabold ">
                 We believe in people, until they believe in themselves again.  
             </div>
